@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MTG Archive</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-secondary bg-gradient">
+  <div class="container bg-secondary bg-gradient">
+    <nav class="container bg-dark bg-gradient">
+      <section class="row">
+        <div class="col">
+          <button id="show-decks" class="btn btn-info">Show Decks</button>
+          <button id="create-deck" class="btn btn-info">Create Deck</button>
+          <button id="show-all" class="btn btn-info">Show All Cards</button>
+          <button id="archived-cards" class="btn btn-info">Archived Cards</button>
+        </div>
+      </section>
+
+      <form action="" id="form-search">
+        <section class="row">
+          <div class="col">
+            <input name="searchbar" id="searchbar" type="search" placeholder="search card" value="">
+          </div>
+          <div class="col">
+            <nav class="nav navbar-expand-sm">
+              <div class="container-fluid">
+                <div class="dropdown">
+                  <select name="manaCost" id="mana-cost" class="form-control">
+                    <option selected>Mana Cost</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7+</option>
+                  </select>
+                </div>
+
+                <div data-toggle="buttons">
+                  <label class="btn btn-block btn-danger">
+                    <input name="colors" type="checkbox" value="R" autocomplete="off"> Red
+                  </label>
+                  <label class="btn btn-block btn-primary">
+                    <input name="colors" type="checkbox" value="U" value="Blue" autocomplete="off"> Blue
+                  </label>
+                  <label class="btn btn-block btn-success">
+                    <input name="colors" type="checkbox" value="G" value="Green" autocomplete="off"> Green
+                  </label>
+                  <label class="btn btn-block btn-dark">
+                    <input name="colors" type="checkbox" value="B" value="Black" autocomplete="off"> Black
+                  </label>
+                  <label class="btn btn-block btn-light">
+                    <input name="colors" type="checkbox" value="W" value="White" autocomplete="off"> White
+                  </label>
+                </div>
+              </div>
+            </nav>
+            <button id="search-btn" class="btn btn-secondary"> Search </button>
+          </div>
+        </section>
+      </form>
+    </nav>
+
+    <main class="container-fluid bg-warning bg-gradient">
+      <section class="container">
+        <div id="card-row" class="row"></div>
+      </section>
+    </main>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
